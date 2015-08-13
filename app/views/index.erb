@@ -15,7 +15,6 @@
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
 
-
     var request = $.ajax({
                           method: "POST",
                           url: "/users",
@@ -24,10 +23,10 @@
 
     request.done(function(response){
       console.log(response);
-      $('body').append('<h1>' + response.name + '</h1>')
-      $('body').append('<h2>' + response.email + '</h2>')
-      $('body').append("<img src='"+ response.photo_link +"'>")
-
+      // $('body').append('<h1>' + response.name + '</h1>')
+      // $('body').append('<h2>' + response.email + '</h2>')
+      // $('body').append("<img src='"+ response.photo_link +"'>")
+      window.location.replace("/users/" + response.id);
     });
 
   };
