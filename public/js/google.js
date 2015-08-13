@@ -19,10 +19,11 @@ function onSignIn(googleUser) {
                       });
 
   request.done(function(response){
-    console.log(response);
-    $('body').append('<h1>' + response.name + '</h1>')
-    $('body').append('<h2>' + response.email + '</h2>')
-    $('body').append("<img src='"+ response.photo_link +"'>")
+    window.location.replace("/");
+    // console.log(response);
+    // $('body').append('<h1>' + response.name + '</h1>')
+    // $('body').append('<h2>' + response.email + '</h2>')
+    // $('body').append("<img src='"+ response.photo_link +"'>")
 
   });
 
