@@ -1,24 +1,24 @@
+require "base64"
+
 post '/users' do
 
   if request.xhr?
+    split_token = params[:idToken].split(".")
+    data = split_token[1]
+    decoded_data = Base64.decode64(data) + "}"
+    decoded_data =  decoded_data
+    user_data = JSON.parse(decoded_data)
 
-    p params
-
-    @user = User.find_or_create_by(email: params["wc"]);
-
-    @user.update_attributes(name:params["Ld"], photo_link:params["zt"])
-
-    if @user.valid?
-      # session[:id] = @user.id
+    @user = User.new(email: user_data["email"], name:user_data["name"], photo_link: user_data["picture"]);
+    if @user.save
+      session[:id] = @user.id
+      p session[:id]
       content_type :json
       @user.to_json
     else
-
     end
   else
-
   end
-
 end
 
 

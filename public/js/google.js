@@ -9,12 +9,13 @@ function onSignIn(googleUser) {
   // The ID token you need to pass to your backend:
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);
-
+  var token = {idToken: id_token}
 
   var request = $.ajax({
                         method: "POST",
                         url: "/users",
-                        data: profile,
+                        data: token
+                        // dataType: "json"
                       });
 
   request.done(function(response){
