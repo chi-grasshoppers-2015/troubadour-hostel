@@ -68,11 +68,11 @@ a {
     text-decoration: none;
 }
 
+.background {  background: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/fake_luxury.png");
+}
+
 .title {
-
-  background: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/fake_luxury.png");
-
-  height:400px;
+  height:30%;
 }
 
 .logo {
