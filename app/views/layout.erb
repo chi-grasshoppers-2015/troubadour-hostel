@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 
-  <!-- <meta name="google-signin-scope" content="nbkincaid@gmail.com"> -->
   <meta name="google-signin-client_id" content="410653360880-o19g86s99imsh49e7dk5erddbnfofc8n.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
@@ -13,10 +12,10 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
+  <link rel="stylesheet" href="/css/normalize.min.css">
+  <link rel="stylesheet" href="/css/trg.css">
   <link rel="stylesheet" href="/css/application.css">
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
   <script src="/js/google.js"></script>
@@ -24,6 +23,29 @@
   <title></title>
 </head>
 <body>
+  <div class="header debug">
+    <div class="fl-l p-xs p-r-xs sdebug">
+      <a href="#">
+        <span class="font1">troubadour</span>
+        <span class="font2">HOSTEL</span>
+      </a>
+    </div>
+
+    <div class="nav p-xs p-r-xs hide-m row show-t fl-r sdebug">
+      <div class="active menu-item inline debug">
+        <a href="#">About</a>
+      </div>
+      <div class="menu-item inline debug">
+        <a href="#">Reservations</a>
+      </div>
+      <div class="menu-item inline debug">
+        <a href="#">Reviews</a>
+      </div>
+      <div class="menu-item inline debug">
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
   <%= yield %>
 </body>
 </html>
