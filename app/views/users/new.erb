@@ -1,16 +1,59 @@
-<p class="form-header">Sign up to continue to <span>Troubadour Hostel</span></p>
-<div id="form-container">
-  <p>Sign up with Google</p>
-  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-  <p> - or - </p>
 
-  <form action="/users" method="POST">
-    <label for="user_email">Email</label>
-    <input type="text" name="user[email]" value="<%= @user.email %>" placeholder="you@example.org">
-    <label for="user_password">Password</label>
-    <input type="text" name="user[password]" placeholder="12345">
-    <span class="error"><%= @error %></span>
-    <input type="submit" value="Sign up">
-  </form>
-  <a href="/sessions/new">Sign in</a>
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h2 class="troubadour">Troubadour</h2>
+            <h2 class="hostel">HOSTEL</h2>
+            <h2 class="brand-tagline">Chicago's Premiere Artist Hostel.</h2>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="pure-button" href="/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="/users/new">SIGN UP</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="pure-button" href="/reservations/new">MAKE A RESERVATION</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+      <div>
+        <h1 class="content-subhead">Sign up with Troubadour Hostel</h1>
+        <br>
+
+
+        <div class="logform">
+          <p>Sign up with Google</p>
+          <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+          <p> - or - </p>
+          <form action="/users" method="POST">
+            <input type="text" class="zocial-dribbble" name="user[username]" placeholder="Enter your email" />
+            <input type="text" name="user[password]" placeholder="Password" />
+            <input type="submit" value="Login" />
+          </form>
+        </div>
+
+
+      </div>
+
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul>
+                        <li class="pure-menu-item"><a href="/about" class="pure-menu-link">About</a></li>
+                        <li class="pure-menu-item"><a href="/reservations/new" class="pure-menu-link">Reservations</a></li>
+                        <li class="pure-menu-item"><a href="/reviews" class="pure-menu-link">Reviews</a></li>
+                        <li class="pure-menu-item"><a href="/kickstarter" class="pure-menu-link">Kickstarter</a></li>
+                        <li class="pure-menu-item"><a href="/contact" class="pure-menu-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
