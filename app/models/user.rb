@@ -2,6 +2,9 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
 
+  has_many :reviews
+  has_many :reservations
+
   validates :email, presence: true, uniqueness: true
 
   def password
