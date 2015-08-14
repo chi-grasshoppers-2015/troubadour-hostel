@@ -49,12 +49,12 @@ h3 {
 .brand-tagline {
     margin: 0;
 }
+
 .troubadour {
   font-family: 'skipper';
   font-size: 4em;
   font-weight: 100;
 }
-
 .hostel {
     font-family: 'burford rustic' ;
     font-size: 3em;
@@ -347,7 +347,12 @@ a.pure-button-primary {
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 .home-menu {
-    background: #2d3e50;
+    background:
+    linear-gradient(
+      rgba(40,38,38, 0.45),
+      rgba(40,38,38, 0.45)
+    ),
+    url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/brushed_alu_dark.png');
 }
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
@@ -363,11 +368,11 @@ a.pure-button-primary {
 }
 
 .home-menu .pure-menu-selected a {
-    color: white;
+    color: #d8c290;
 }
 
 .home-menu a {
-    color: #6FBEF3;
+    color: white;
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
@@ -383,7 +388,12 @@ a.pure-button-primary {
  */
 
 .splash-container {
-    background: #1f8dd6;
+    background:
+    linear-gradient(
+      rgba(196,146,36, 0.45),
+      rgba(196,146,36, 0.45)
+    ),
+    url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/gold_scale.png');
     z-index: 1;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
@@ -402,7 +412,6 @@ a.pure-button-primary {
     position: absolute;
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
-    text-transform: uppercase;
 }
 
 /* This is the main heading that appears on the blue section */
@@ -520,4 +529,23 @@ a.pure-button-primary {
     .splash-head {
         font-size: 300%;
     }
+}
+
+.troubadour-menu {
+  font-family: 'skipper';
+  font-size: 6em;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+
+}
+
+.hostel-menu {
+    font-family: 'burford rustic' ;
+    font-size: 3.5em;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    color: white;
 }
