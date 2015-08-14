@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".nav").on("click", "#log-out", function(event) {
+  $(".pure-menu-list").on("click", ".log-out", function(event) {
     event.preventDefault();
     gapi.auth.signOut();
     $.ajax({
