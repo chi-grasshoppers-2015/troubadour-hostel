@@ -21,7 +21,7 @@ function onSignIn(googleUser) {
                       });
 
   request.done(function(response){
-    window.location.replace("/");
+    window.location.replace("https://th-grasshoppers.herokuapp.com");
     // console.log(response);
     // $('body').append('<h1>' + response.name + '</h1>')
     // $('body').append('<h2>' + response.email + '</h2>')
