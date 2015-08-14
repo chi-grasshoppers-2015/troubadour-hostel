@@ -8,10 +8,14 @@
             <li class="pure-menu-item"><a href="/reviews" class="pure-menu-link">Reviews</a></li>
             <li class="pure-menu-item"><a href="#" class="pure-menu-link">Kickstarter</a></li>
             <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Login</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sign Up</a></li>
-             <li class="pure-menu-item nav"><a href="/sessions" class="pure-menu-link" id="log-out">Log out</a></li>
-            <img class="post-avatar" alt="Spencer&#x27;s avatar" height="48" width="48" src="https://lh3.googleusercontent.com/-9BGuPJjlqxI/AAAAAAAAAAI/AAAAAAAAA48/rn4SgUqVOs0/s120-c/photo.jpg">
+
+            <% if logged_in? %>
+                <li class="log-out pure-menu-item"><a href="#" class="pure-menu-link">Logout</a></li>
+                <a href="/users/<%=current_user.id%>" ><img class="post-avatar" alt="<%= current_user.name %>&#x27;s avatar" height="48" width="48" src="<%=current_user.photo_link%>"></a>
+            <% else %>
+                <li class="pure-menu-item"><a href="/sessions/new" class="pure-menu-link">Login</a></li>
+                <li class="pure-menu-item"><a href="/users/new" class="pure-menu-link">Sign Up</a></li>
+            <% end %>
         </ul>
     </div>
 </div>
@@ -127,11 +131,11 @@
     <div class="footer">
       <div class="pure-menu pure-menu-horizontal">
           <ul>
-              <li class="pure-menu-item"><a href="/about" class="pure-menu-link">About</a></li>
+              <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
               <li class="pure-menu-item"><a href="/reservations/new" class="pure-menu-link">Reservations</a></li>
               <li class="pure-menu-item"><a href="/reviews" class="pure-menu-link">Reviews</a></li>
               <li class="pure-menu-item"><a href="/kickstarter" class="pure-menu-link">Kickstarter</a></li>
-              <li class="pure-menu-item"><a href="/contact" class="pure-menu-link">Contact</a></li>
+              <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
           </ul>
       </div>
   </div>
