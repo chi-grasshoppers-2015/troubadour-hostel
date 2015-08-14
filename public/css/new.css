@@ -54,6 +54,7 @@ h3 {
   font-family: 'skipper';
   font-size: 4em;
   font-weight: 100;
+  color: black;
 }
 .hostel {
     font-family: 'burford rustic' ;
@@ -466,8 +467,8 @@ a.pure-button-primary {
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
-    background: #2d3e50;
-    color: #aaa;
+    background: #d8c290;
+    color: black;
 }
 
 /*
