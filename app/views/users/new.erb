@@ -12,9 +12,9 @@
                         <a class="pure-button" href="/">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="pure-button" href="/users/new">SIGN UP</a>
+                        <a class="pure-button" href="/sessions/new">LOGIN</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="pure-button" href="/reservations/new">MAKE A RESERVATION</a>
                     </li>
                 </ul>
@@ -33,9 +33,11 @@
           <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
           <p> - or - </p>
           <form action="/users" method="POST">
-            <input type="text" class="zocial-dribbble" name="user[username]" placeholder="Enter your email" />
+            <input type="text" class="zocial-dribbble" name="user[email]" placeholder="Enter your email" />
             <input type="text" name="user[password]" placeholder="Password" />
-            <input type="submit" value="Login" />
+            <span class="error"><%= @error %></span>
+            <input type="submit" value="Sign Up" /><br>
+          <a href="/sessions/new">Login to your account</a>
           </form>
         </div>
 
