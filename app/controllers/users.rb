@@ -16,7 +16,14 @@ post '/users' do
 
     end
   else
+    @user = User.create(params[:user])
 
+    if @user.valid?
+      session[:id] = @user.id
+      redirect "/"
+    else
+      erb :"/users/new"
+    end
   end
 end
 
