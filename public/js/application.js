@@ -10,7 +10,8 @@ $(document).ready(function() {
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
 
-    gapi.auth.signOut();
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut();
 
     console.log("we are connected again.")
 
