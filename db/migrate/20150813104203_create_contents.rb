@@ -1,7 +1,7 @@
 class CreateContents < ActiveRecord::Migration
   def change
     create_table :contents do |t|
-      t.integer         :user_id
+      t.references      :admin
       t.string          :page
       t.string          :element
       t.string          :content

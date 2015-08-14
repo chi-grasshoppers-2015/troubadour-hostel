@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string            :state
       t.integer           :zip
       t.string            :phone_number
+      t.boolean           :admin, default: false
       t.timestamps        null:false
     end
   end
