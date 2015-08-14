@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string            :name
       t.string            :email, null: false, uniqueness: true
+      t.string            :hashed_password
       t.string            :photo_link
       t.string            :street_address
       t.string            :city

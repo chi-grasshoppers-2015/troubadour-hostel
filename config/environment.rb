@@ -13,6 +13,7 @@ require 'uri'
 require 'pathname'
 require "base64"
 require 'pg'
+
 require 'active_record'
 require 'logger'
 require 'jwt'
