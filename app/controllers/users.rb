@@ -3,14 +3,10 @@
 post '/users' do
 
   if request.xhr?
-    split_token = params[:idToken].split(".")
-    data = split_token[1]
-    decoded_data = Base64.decode64(data) + "}"
-    decoded_data =  decoded_data
-    user_data = JSON.parse(decoded_data)
-
-    @user = User.find_or_create_by(email: user_data["email"])
-    @user.update_attributes(name:user_data["name"], photo_link: user_data["picture"])
+    token = params[:idToken]
+    decoded_token = JWT.decode token, nil, false
+    @user = User.find_or_create_by(email: decoded_token["email"])
+    @user.update_attributes(name:decoded_token["name"], photo_link: decoded_token["picture"])
 
     if @user.valid?
       session[:id] = @user.id

@@ -5,11 +5,13 @@ function onSignIn(googleUser) {
   console.log("Name: " + profile.getName());
   console.log("Image URL: " + profile.getImageUrl());
   console.log("Email: " + profile.getEmail());
-
+  console.log("hey it's friday")
   // The ID token you need to pass to your backend:
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);
   var token = {idToken: id_token}
+
+  console.log(id_token);
 
   var request = $.ajax({
                         method: "POST",

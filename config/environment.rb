@@ -14,7 +14,7 @@ require "base64"
 require 'pg'
 require 'active_record'
 require 'logger'
-
+require 'jwt'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
