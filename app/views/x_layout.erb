@@ -10,57 +10,24 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-  <link rel="stylesheet" href="/css/normalize.css">
+<!--   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/normalize.min.css">
   <link rel="stylesheet" href="/css/trg.css">
-  <link rel="stylesheet" href="/css/application.css">
-  <link rel="stylesheet" href="/css/nbkincaid_css.css">
+  <link rel="stylesheet" href="/css/application.css"> -->
+  <!-- <link rel="stylesheet" href="/css/nbkincaid_css.css"> -->
+  <link rel="stylesheet" href="/css/new.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 
+<!--<![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/new.js"></script>
   <script src="/js/google.js"></script>
-
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Traoubadour Hostel</title>
 </head>
-<body class="background">
-  <div class="header background debug">
-    <div class="fl-l p-xs p-r-xs sdebug">
-      <a href="/">
-        <span class="font1">troubadour</span>
-        <span class="font2">HOSTEL</span>
-      </a>
-    </div>
 
-    <div class="nav p-xs p-r-xs hide-m row show-t fl-r sdebug">
-      <% if logged_in? %>
-        <div>Welcome,<a href="/users/<%=current_user.id%>"> <%= current_user.name %>! <img class="little-pic" src="<%=current_user.photo_link%>" ></a></div>
-      <% end %>
-      <div class="active menu-item inline debug">
-        <a href="#">About</a>
-      </div>
-      <div class="menu-item inline debug">
-        <a href="#">Reservations</a>
-      </div>
-      <div class="menu-item inline debug">
-        <a href="#">Reviews</a>
-      </div>
-      <div class="menu-item inline debug">
-        <a href="#">Contact</a>
-      </div>
-      <% if logged_in? %>
-        <div class="menu-item inline debug">
-          <a id="log-out" href="#">Sign Out</a>
-        </div>
-      <% else %>
-        <div class="menu-item inline debug">
-          <a href="/sessions/new">Log In</a>
-        </div>
-        <div class="menu-item inline debug">
-          <a href="/users/new">Sign Up</a>
-        </div>
-      <% end %>
-    </div>
-  </div>
   <%= yield %>
 </body>
 </html>
