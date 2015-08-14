@@ -16,7 +16,8 @@ post '/users' do
 
     end
   else
-    @user = User.create(params[:user])
+    @user = User.find_or_create_by(email: params[:user][:email])
+    @user.update_attributes(password: params[:user][:password])
 
     if @user.valid?
       session[:id] = @user.id
