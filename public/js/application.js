@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".pure-menu-list").on("click", ".edit", updatePage)
+  // $(".pure-menu-list").on("click", ".edit", updatePage)
   $(".pure-menu-list").on("click", ".log-out", function(event) {
     event.preventDefault();
 
