@@ -1,6 +1,10 @@
 delete "/sessions" do
-  session[:id] = nil
-  redirect "/"
+  session.clear
+  if request.xhr?
+    200
+  else
+    redirect "/"
+  end
 end
 
 post "/sessions" do
@@ -14,5 +18,9 @@ post "/sessions" do
 end
 
 get "/sessions/new" do
-  erb :"/sessions/new"
+  if logged_in?
+    redirect '/'
+  else
+    erb :"/sessions/new"
+  end
 end
