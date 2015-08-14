@@ -8,4 +8,8 @@ helpers do
     User.find(session[:id])
   end
 
+  def admin?
+    current_user.admin == true
+  end
+
 end

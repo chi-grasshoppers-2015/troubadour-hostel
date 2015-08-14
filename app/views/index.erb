@@ -2,11 +2,15 @@
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
 
         <ul class="pure-menu-list">
+
             <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
             <li class="pure-menu-item"><a href="/reservations/new" class="pure-menu-link">Reservations</a></li>
             <li class="pure-menu-item"><a href="/reviews" class="pure-menu-link">Reviews</a></li>
             <li class="pure-menu-item"><a href="#" class="pure-menu-link">Kickstarter</a></li>
             <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
+            <% if logged_in? && admin? %>
+                <li class="pure-menu-item"><a href="#" class="edit pure-menu-link">Edit</a></li>
+            <% end %>
 
             <% if logged_in? %>
                 <li class="log-out pure-menu-item"><a href="#" class="pure-menu-link">Logout</a></li>
@@ -41,7 +45,7 @@
                     <i class="fa fa-rocket"></i>
                     What is Troubadour Hostel?
                 </h3>
-                <p>
+                <p class="editable">
                     TROUBADOUR HOSTEL is an artist's haven that offers affordable accommodations to artists of all disciplines, backpackers, and budget travelers. We provide a home away from home for the global artistic community that fosters creativity, promotes collaboration, and advocates a free-thinking space.
                 </p>
             </div>
