@@ -117,6 +117,12 @@ a {
 
 .inline { display: inline; }
 
+.little-pic {
+  height: 20px;
+  width: 20px;
+}
+
+
 .tx-center {text-align: center;}
 .tx-bb     {font-family: 'bariol_bold';}
 

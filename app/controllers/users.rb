@@ -1,4 +1,4 @@
-require "base64"
+
 
 post '/users' do
 
@@ -9,20 +9,39 @@ post '/users' do
     decoded_data =  decoded_data
     user_data = JSON.parse(decoded_data)
 
-    @user = User.new(email: user_data["email"], name:user_data["name"], photo_link: user_data["picture"]);
-    if @user.save
+    @user = User.find_or_create_by(email: user_data["email"])
+    @user.update_attributes(name:user_data["name"], photo_link: user_data["picture"])
+
+    if @user.valid?
       session[:id] = @user.id
-      p session[:id]
       content_type :json
       @user.to_json
     else
+
     end
   else
+
   end
 end
 
 
+get '/users/new' do
+  @user = User.new
+  erb :"/users/new"
+end
+
+get "/users/:id/edit" do
+  @user = User.find(params[:id])
+  erb :"/users/edit"
+end
+
 get "/users/:id" do
   @user = User.find(params[:id])
   erb :"/users/show"
+end
+
+put "/users/:id" do
+  @user = User.find(params[:id])
+  @user.update_attributes(params[:user])
+  redirect "/users/#{@user.id}"
 end

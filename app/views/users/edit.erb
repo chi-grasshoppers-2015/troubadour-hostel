@@ -1,0 +1,10 @@
+<div id="form-container">
+  <p class="form-header">Edit user info</p>
+  <h1><%= @user.name %></h1>
+  <img src="<%= @user.photo_link %>" >
+  <h2><%= @user.email %></h2>
+  <form action="/users/<%= @user.id %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <%= erb :"users/_user_form_info" %>
+  </form>
+</div>

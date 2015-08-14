@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/css/normalize.min.css">
   <link rel="stylesheet" href="/css/trg.css">
   <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="/css/nbkincaid_css.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -24,13 +25,16 @@
 <body class="background">
   <div class="header background debug">
     <div class="fl-l p-xs p-r-xs sdebug">
-      <a href="#">
+      <a href="/">
         <span class="font1">troubadour</span>
         <span class="font2">HOSTEL</span>
       </a>
     </div>
 
     <div class="nav p-xs p-r-xs hide-m row show-t fl-r sdebug">
+      <% if logged_in? %>
+        <div>Welcome,<a href="/users/<%=current_user.id%>"> <%= current_user.name %>! <img class="little-pic" src="<%=current_user.photo_link%>" ></a></div>
+      <% end %>
       <div class="active menu-item inline debug">
         <a href="#">About</a>
       </div>
@@ -43,6 +47,18 @@
       <div class="menu-item inline debug">
         <a href="#">Contact</a>
       </div>
+      <% if logged_in? %>
+        <div class="menu-item inline debug">
+          <a id="log-out" href="#">Sign Out</a>
+        </div>
+      <% else %>
+        <div class="menu-item inline debug">
+          <a href="/sessions/new">Log In</a>
+        </div>
+        <div class="menu-item inline debug">
+          <a href="/users/new">Sign Up</a>
+        </div>
+      <% end %>
     </div>
   </div>
   <%= yield %>
