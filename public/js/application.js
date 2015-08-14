@@ -9,7 +9,7 @@ $(document).ready(function() {
       url: "/sessions",
       method: "delete"
     }).done( function() {
-      window.location.replace("/");
+      window.location.replace("https://th-grasshoppers.herokuapp.com");
     })
   })
 
