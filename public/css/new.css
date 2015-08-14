@@ -192,11 +192,12 @@ h3 {
 
 /*SIGN IN FORM */
 
-.form{
+.logform{
   width: 400px;
-  height: 350px;
+  height: 400px;
   background: #edeff1;
   margin: 0px auto;
+  text-align:center;
   padding-top: 20px;
   border-radius: 10px;
   -moz-border-radius: 10px;
@@ -230,7 +231,7 @@ input[type="password"]:focus{
 
 input[type="submit"]{
   display: block;
-  background: #1abc9d;
+  background:  #3276bb;
   width: 314px;
   padding: 12px;
   cursor: pointer;
@@ -245,23 +246,10 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-  background: #09cca6
+  background: #26629f;
 }
 
-a{
-  text-align: center;
-  font-family: Arial;
-  color: gray;
-  display: block;
-  margin: 15px auto;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 12px;
-}
 
-a:hover{
-  color: #1abc9d;
-}
 
 
 ::-webkit-input-placeholder {
@@ -278,4 +266,9 @@ a:hover{
 
 :-ms-input-placeholder {
    color: gray;
+}
+.g-signin2 {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 12px;
 }
